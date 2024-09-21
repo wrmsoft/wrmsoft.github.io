@@ -19,7 +19,6 @@ var video = document.getElementById("video");
 video.src = 'video.mp4';
 var legenda = video.addTextTrack('subtitles', 'Português', 'PT');
 legenda.src = 'legendas.vtt'; 
-legenda.default = true;
 legenda.mode = 'showing';
 
 function playV(){ 
