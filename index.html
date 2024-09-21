@@ -17,9 +17,13 @@
 <script>
 var video = document.getElementById("video"); 
 video.src = 'video.mp4';
-var legenda = video.addTextTrack('subtitles', 'Português', 'PT');
+var legenda = document.createElement('track');
+legenda.kind = 'subtitles';
+legenda.label = 'Português';
+legenda.srclang = 'pt';
 legenda.src = 'legendas.vtt'; 
-legenda.mode = 'showing';
+legenda.default = true;
+video.appendChild(legenda);
 
 function playV(){ 
    video.play()
