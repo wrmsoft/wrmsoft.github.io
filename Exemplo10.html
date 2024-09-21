@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="UTF-8"
+<div style="text-align:center"> 
+   <video id="video"></video>
+   <br><br>
+   <button onclick="playV()"> PLAY</button>  
+   <button onclick="stopV()"> STOP</button>   
+</div>
+
+<style> ::cue {  
+   font-size: 24px; 
+   color: white; 
+   background: rgba(0, 0, 0, 0); } 
+</style>
+
+<script>
+var video = document.getElementById("video"); 
+video.src = 'video.mp4';
+var legenda = document.createElement('track');
+legenda.kind = 'subtitles';
+legenda.label = 'Português';
+legenda.srclang = 'pt';
+legenda.src = 'legendas.vtt'; // Caminho para o arquivo .vtt
+legenda.default = true;
+legenda.mode = 'showing';
+video.appendChild(track);
+
+
+function playV(){ 
+   video.play()
+}
+function stopV() {
+   video.load();
+}
+</script>
+</html>
