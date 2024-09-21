@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="UTF-8"
+<div style="text-align:center"> 
+   <video id="video"></video>
+   <br><br>
+   <button onclick="playV()"> PLAY</button>  
+   <button onclick="stopV()"> STOP</button>   
+</div>
+
+<style> ::cue {  
+   font-size: 24px; 
+   color: red; 
+   background: rgba(0, 0, 0, 0); } 
+</style>
+
+<script>
+var video = document.getElementById("video"); 
+video.src = 'video.mp4';
+var legenda = video.addTextTrack('subtitles', 'Português', 'PT');
+legenda.addCue(new VTTCue(0, 3, "Edição de Áudio"));
+legenda.addCue(new VTTCue(4, 7, "Criando efeito WahWah"));
+legenda.mode = 'showing';
+
+function playV(){ 
+   video.play()
+}
+function stopV() {
+   video.load();
+}
+</script>
+</html>
