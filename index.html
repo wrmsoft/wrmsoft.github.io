@@ -17,10 +17,14 @@
 <script>
 var video = document.getElementById("video"); 
 video.src = 'video.mp4';
-var legenda = video.addTextTrack('subtitles', 'Português', 'PT');
-legenda.addCue(new VTTCue(0, 3, "Edição de Áudio"));
-legenda.addCue(new VTTCue(4, 7, "Criando efeito WahWah"));
+var legenda = document.createElement('track');
+legenda.kind = 'subtitles';
+legenda.label = 'Português';
+legenda.srclang = 'pt';
+legenda.src = 'legendas.vtt'; 
+legenda.default = true;
 legenda.mode = 'showing';
+video.appendChild(track);
 
 function playV(){ 
    video.play()
